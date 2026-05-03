@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+<form onsubmit="inscription(event)">
+  <input type="text" placeholder="Nom" id="nom" required>
+  <input type="text" placeholder="Prénom" id="prenom" required>
+  <input type="text" placeholder="École" id="ecole" required>
+  <input type="password" placeholder="Mot de passe" id="mdp" required>
+  <button type="submit">S'inscrire</button>
+</form>
+
+<script>
+function inscription(e) {
+  e.preventDefault();
+
+  let user = {
+    nom: document.getElementById("nom").value,
+    prenom: document.getElementById("prenom").value,
+    ecole: document.getElementById("ecole").value,
+    mdp: document.getElementById("mdp").value
+  };
+
+  localStorage.setItem("user", JSON.stringify(user));
+
+  alert("Inscription réussie 🎉");
+  window.location.href = "connexion.html";
+}
+</script>
+<form onsubmit="connexion(event)">
+  <input type="text" placeholder="Nom" id="nom" required>
+  <input type="text" placeholder="Prénom" id="prenom" required>
+  <input type="password" placeholder="Mot de passe" id="mdp" required>
+
+  <button type="submit">Se connecter</button>
+</form>
+<script>
+function connexion(e) {
+  e.preventDefault();
+
+  let nom = document.getElementById("nom").value;
+  let prenom = document.getElementById("prenom").value;
+  let mdp = document.getElementById("mdp").value;
+
+  let user = JSON.parse(localStorage.getItem("user"));
+
+  if (user && user.nom === nom && user.prenom === prenom && user.mdp === mdp) {
+    localStorage.setItem("connecte", "oui");
+    alert("Connexion réussie ✅");
+    window.location.href = "index.html";
+  } else {
+    alert("Informations incorrectes ❌");
+  }
+}
+</script>
+<script>
+let connecte = localStorage.getItem("connecte");
+
+if (connecte !== "oui") {
+  alert("Tu dois te connecter !");
+  window.location.href = "connexion.html";
+}
+</script>
+</body>
+</html>

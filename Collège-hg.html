@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Collège - Histoire-géo</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <style>
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+     transform: translateY(20px) scale(0.98);
+    animation: pageFade 1s ease forwards;
+}
+
+@keyframes pageFade {
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+        
+}
+
+/* HEADER */
+header {
+    background-color: #0b3d91;
+    text-align: center;
+    padding: 20px;
+    color: white;
+}
+
+header h1 {
+    background: white;
+    color: black;
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+/* TITRE */
+h2 {
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* CONTAINER */
+.container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+/* CARTES */
+.classe {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    width: 200px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: 0.3s;
+    text-decoration: none;
+    color: black;
+}
+
+.classe:hover {
+    transform: translateY(-10px);
+    background: gold;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Collège</h1>
+    <p>Choisis ton niveau</p>
+</header>
+
+<h2>📚 Sélectionne ta classe</h2>
+
+<section class="container">
+
+    <a href="6ème_hg.html" class="classe">6ème</a>
+    <a href="5ème_hg.html" class="classe">5ème</a>
+    <a href="4ème_hg.html" class="classe">4ème</a>
+    <a href="3ème_hg.html" class="classe">3ème</a>
+
+</section>
+
+</body>
+</html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leçon</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<style>
+  body {
+  font-family: Arial, sans-serif;
+  background: #f4f6ff;
+  margin: 0;
+}
+
+.lesson-page {
+  padding: 30px;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #2c3e50;
+}
+
+/* layout principal */
+.content {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+/* VIDEO CARD */
+.video-card {
+  flex: 2;
+  background: white;
+  padding: 15px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.video-container {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+}
+
+.video-container video {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+}
+
+/* DOWNLOAD CARD */
+.download-card {
+  flex: 1;
+  background: linear-gradient(145deg, #ffffff, #eef2ff);
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.download-card h2 {
+  margin-top: 0;
+}
+
+.btn-download {
+  display: inline-block;
+  margin: 15px 0;
+  padding: 12px 18px;
+  background: #6c5ce7;
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.btn-download:hover {
+  background: #4e3dc8;
+}
+
+.preview img {
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+.ratings {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin: 30px;
+  flex-wrap: wrap;
+}
+
+.rating-card {
+  background: white;
+  padding: 10px;
+  border-radius: 16px;
+  width: 250px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+/* étoiles */
+.stars {
+  font-size: 30px;
+  cursor: pointer;
+  color: #ccc;
+}
+
+.stars span {
+  transition: 0.2s;
+}
+
+.stars span.active {
+  color: gold;
+}
+.comment-box {
+  margin: 30px;
+  padding: 20px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+  max-width: 500px;
+}
+
+.comment-box input,
+.comment-box textarea {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+.comment-box button {
+  padding: 10px 15px;
+  border: none;
+  background: #6c5ce7;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+/* 📱 responsive */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+}
+</style>
+
+
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  emailjs.init("lfVLYeh366VxzhKsp");
+</script>
+<script>
+function sendComment() {
+  let name = document.getElementById("name").value;
+  let message = document.getElementById("message").value;
+
+  emailjs.send("histoire geo mon combat", "template_7id7bkx", {
+    from_name: name,
+    message: message
+  }).then(() => {
+    document.getElementById("status").innerText = "✔ Commentaire envoyé !";
+  }).catch(() => {
+    document.getElementById("status").innerText = "❌ Erreur d'envoi";
+  });
+}
+</script>
+
+
+
+
+
+
+
+<body>
+
+<div class="lesson-page">
+
+  <h1 class="title">Ma Leçon du Jour</h1>
+
+  <div class="content">
+
+    <!-- VIDEO -->
+    <div class="video-card">
+      <div class="video-container">
+        <video controls>
+          <source src="c:\Users\Lenovo\Videos\VID-20260209-WA0034.mp4" type="video/mp4">
+          Ton navigateur ne supporte pas la vidéo.
+        </video>
+      </div>
+    </div>
+
+    <!-- FICHE -->
+    <div class="download-card">
+      <h2>📄 Fiche de révision</h2>
+      <p>Résumé clair + points essentiels de la leçon.</p>
+
+      <a href="fiche.pdf" download class="btn-download">
+        Télécharger la fiche
+      </a>
+
+      <div class="preview">
+        <p>Aperçu :</p>
+        <img src="c:\Users\Lenovo\Pictures\Screenshots\Capture d'écran 2025-11-09 192341.png" alt="aperçu fiche">
+      </div>
+    </div>
+
+  </div>
+
+</div>
+<div class="ratings">
+
+  <!-- VIDEO RATING -->
+  <div class="rating-card">
+    <h3>🎥 Vidéo</h3>
+
+    <div class="stars" data-type="video">
+      ★★★★★
+    </div>
+
+    <p>Moyenne : <span id="video-score">0</span> / 5</p>
+  </div>
+
+  <!-- FICHE RATING -->
+  <div class="rating-card">
+    <h3>📄 Fiche</h3>
+
+    <div class="stars" data-type="fiche">
+      ★★★★★
+    </div>
+
+    <p>Moyenne : <span id="fiche-score">0</span> / 5</p>
+  </div>
+  <div class="comment-box">
+
+  <h3>💬 Commentaires des élèves</h3>
+
+  <input type="text" id="name" placeholder="Ton prénom">
+  <textarea id="message" placeholder="Ton commentaire..."></textarea>
+
+  <button onclick="sendComment()">Envoyer</button>
+
+  <p id="status"></p>
+
+</div>
+
+</div>
+</body>
+</html>1
