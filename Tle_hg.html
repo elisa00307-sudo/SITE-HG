@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>6ème - Histoire Géo</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+<style>
+    body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+}
+
+/* HEADER */
+header{
+    background-color: #0b3d91;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.container h1{
+     background: gold;
+    color: black;
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* TITRE */
+h2{
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* CONTAINER */
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 30px;
+}
+
+/* CARDS LEÇONS */
+.lecon{
+    display: block;
+    background: white;
+    padding: 20px;
+    width: 220px;
+    border-radius: 15px;
+    text-decoration: none;
+    color: black;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.lecon:hover{
+    transform: translateY(-8px);
+    background: gold;
+}
+
+.histoire{
+    background-color: #eef2ff;
+    padding: 20px;
+}
+
+.geographie{
+    background-color: #e8f8f5;
+    padding: 20px;
+}
+/* 📱 responsive */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+    <h1>Classe de Tle</h1>
+    <p>Choisis une leçon</p>
+</header>
+
+<h2>📚 Leçons disponibles</h2>
+
+<section class="container">
+<div class="histoire">
+    <h2>🏛️ Histoire</h2>
+    <section class="container">
+        <a href="Tle_LH1.html" class="lecon">L’ONU</a>
+        <a href="Tle_LH2.html" class="lecon">L’ère de la bipolarisation de 1947 à 1991</a>
+        <a href="Tle_LH3.html" class="lecon">De la fin de la guerre froide vers un monde multipolaire</a>
+        <a href="Tle_LH4.html" class="lecon">La montée des nationalismes en Afrique</a>
+        <a href="Tle_LH5.html" class="lecon">L’accession de la Côte d’Ivoire à l’indépendance</a>
+        <a href="Tle_LH6.html" class="lecon">L’accession de l’Algérie à l’indépendance </a>
+        <a href="Tle_LH7.html" class="lecon">L’Union Africaine</a>
+        <a href="Tle_LH8.html" class="lecon">Croyance et valeurs dominantes dans le monde occidental</a>
+        <a href="Tle_LH9.html" class="lecon">Les mutations contemporaines de la civilisation négro-africaine</a>
+    </section>
+</div>
+
+<div class="geographie">
+    <h2>🌍 Géographie</h2>
+    <section class="container">
+        <a href="Tle_LG1.html" class="lecon">Les fondements du développement économique de la Côte d’Ivoire</a>
+        <a href="Tle_LG2.html" class="lecon">Les secteurs d’activités économiques de la Côte d’Ivoire</a>
+        <a href="Tle_LG3.html" class="lecon">Les problèmes de développement économique de la Côte d’Ivoire</a>
+        <a href="Tle_LG4.html" class="lecon">Les fondements de l’économie de la France</a>
+        <a href="Tle_LG5.html" class="lecon">La France : une économie dominée par le tertiaire</a>
+        <a href="Tle_LG6.html" class="lecon">Les fondements du développement économique de la Corée du sud</a>
+        <a href="Tle_LG7.html" class="lecon">Les performances économiques de la Corée du Sud</a>
+        <a href="Tle_LG8.html" class="lecon">La CEDEAO : une organisation régionale à caractère économique</a>
+        <a href="Tle_LG9.html" class="lecon">Les relations UE/ACP : une forme de coopération nord-sud</a>
+
+    </section>
+</div>
+
+</section>
+
+</body>
+</html>
